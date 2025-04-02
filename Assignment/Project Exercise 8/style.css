@@ -15,19 +15,13 @@ html,body{
     gap: 20px;
     padding: 20px;
     grid-template-areas: 
-    "a"
-    "b"
-    "c"
-    "d"
-    "e"
-    "f"
-    "g"
-    "h"
-    "i"
-    "j";
+   "a a a b"
+   "a a a c"
+   "a a a d"
+   "e f g h"
 }
 
-@media (min-width :1080px){
+/* @media (min-width :1080px){
     .images{
         grid-template-areas: 
     "a a b c"
@@ -35,7 +29,7 @@ html,body{
     "f g j j"
     "h i j j";
     }
-}
+} */
 
 img{
     width: 100%;
@@ -69,7 +63,9 @@ img{
 }
 .image-i{
     grid-area : i;
+    display: none;
 }
 .image-j{
     grid-area : j;
+    display: none;
 }
