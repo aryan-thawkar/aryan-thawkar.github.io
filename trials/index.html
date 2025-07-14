@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f5f5f5;
+        }
+        
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #e0e0e0;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            will-change: transform;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Alternative smooth loader styles */
+        .loader-pulse {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #3498db;
+            animation: pulse 1.5s ease-in-out infinite;
+            will-change: transform, opacity;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(0.8);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(0.8);
+                opacity: 1;
+            }
+        }
+        
+        .loader-dots {
+            display: inline-block;
+            position: relative;
+            width: 80px;
+            height: 80px;
+        }
+        
+        .loader-dots div {
+            position: absolute;
+            top: 33px;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: #3498db;
+            animation-timing-function: cubic-bezier(0, 1, 1, 0);
+        }
+        
+        .loader-dots div:nth-child(1) {
+            left: 8px;
+            animation: dots1 0.6s infinite;
+        }
+        
+        .loader-dots div:nth-child(2) {
+            left: 8px;
+            animation: dots2 0.6s infinite;
+        }
+        
+        .loader-dots div:nth-child(3) {
+            left: 32px;
+            animation: dots2 0.6s infinite;
+        }
+        
+        .loader-dots div:nth-child(4) {
+            left: 56px;
+            animation: dots3 0.6s infinite;
+        }
+        
+        @keyframes dots1 {
+            0% { transform: scale(0); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes dots3 {
+            0% { transform: scale(1); }
+            100% { transform: scale(0); }
+        }
+        
+        @keyframes dots2 {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(24px, 0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Standard spinner loader -->
+    <!-- <div class="loader"></div> -->
+    
+    <!-- Alternative loaders (uncomment to use) -->
+    <!-- <div class="loader-pulse"></div> -->
+    
+    
+    <div class="loader-dots">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+   
+</body>
+</html>

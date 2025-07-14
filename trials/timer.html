@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .timer {
+        font-size: 10px;
+        font-weight: bold;
+        color: rgb(58, 58, 58);
+    }
+</style>
+<body>
+    <div class="timer">500</div>
+</body>
+<script>
+    let timerElement = document.querySelector('.timer');
+    let timeLeft = 300;
+
+    let countdown = setInterval(() => {
+        timeLeft--;
+        timerElement.textContent = timeLeft;
+
+        if (timeLeft <= 0) {
+            clearInterval(countdown);
+        }
+    }, 1000);
+</script>
+</html>
